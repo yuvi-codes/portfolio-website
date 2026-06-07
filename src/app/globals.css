@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — Global CSS Variables
+   ============================================================ */
+:root {
+  /* --- Base palette (user-global rules) --- */
+  --amber: #C07A2A;
+  --bronze: #7A4F1E;
+  --gold: #C9A84C;
+  --parchment: #FAF5EE;
+  --ivory: #FFFDF8;
+
+  /* --- Hero / dark section palette --- */
+  --obsidian: #0A0A08;
+  --charcoal: #141410;
+  --dark: #1C1C17;
+  --gold-light: #E8C96B;
+  --crimson: #C0392B;
+  --cream: #F0EAD6;
+  --muted: #A09A7A;
+  --dim: #6B6B55;
+
+  /* --- Semantic aliases --- */
+  --background: var(--obsidian);
+  --foreground: var(--cream);
+
+  /* --- Font variables --- */
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-lora: "Lora", serif;
+  --font-sarala: "Sarala", sans-serif;
+  --font-staatliches: "Staatliches", display;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-bebas: "Bebas Neue", display;
+}
+
+/* ============================================================
+   TAILWIND v4 THEME REGISTRATION
+   ============================================================ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-crimson: var(--crimson);
+  --color-cream: var(--cream);
+  --color-obsidian: var(--obsidian);
+  --color-charcoal: var(--charcoal);
+  --color-dark: var(--dark);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-amber: var(--amber);
+  --color-bronze: var(--bronze);
+  --color-parchment: var(--parchment);
+  --color-ivory: var(--ivory);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--foreground);
+  font-family: var(--font-sarala);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   HERO ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* ============================================================
+   INTRO OVERLAY ANIMATIONS
+   ============================================================ */
+@keyframes overlayFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes skipFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.overlay-fade-out {
+  animation: overlayFadeOut 1s ease-out forwards;
+}
+
+.skip-fade-in {
+  animation: skipFadeIn 0.6s ease-out 1.5s forwards;
+  opacity: 0;
+}
