@@ -2,7 +2,7 @@
 
 > **Live:** [yuvraj-umang-portfolio.vercel.app](https://yuvraj-umang-portfolio.vercel.app) · **Stack:** Next.js · Tailwind CSS · Vercel
 
-Personal portfolio built to reflect real production work — not a template, not a tutorial project. Designed and shipped from scratch.
+Personal portfolio built to reflect real production work
 
 ---
 
